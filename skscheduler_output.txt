@@ -1,0 +1,105 @@
+FA23/CS_421/Project 3 via C v11.4.0-gcc
+❯ gcc -Wall -o skscheduler skscheduler.c
+
+FA23/CS_421/Project 3 via C v11.4.0-gcc
+❯ ./skscheduler Prog3inputfileF23.txt
+--------------- [ File Contents ] ---------------
+Process         Burst Time      Arrival Time
+A               1               0
+B               4               0
+C               2               2
+D               1               2
+E               12              3
+F               5               4
+G               3               5
+H               2               5
+--------------- [ File Contents ] ---------------
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Round Robin Simulation                        ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+  0 A   Process Terminated.
+  1 B   Quantum Expired - 1ms Remaining.
+  4 C   Process Terminated.
+  6 D   Process Terminated.
+  7 E   Quantum Expired - 9ms Remaining.
+  10 F  Quantum Expired - 2ms Remaining.
+  13 B  Process Terminated.
+  14 G  Process Terminated.
+  17 H  Process Terminated.
+  19 E  Quantum Expired - 6ms Remaining.
+  22 F  Process Terminated.
+  24 E  Quantum Expired - 3ms Remaining.
+  30    Completed
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Process       ┃ Turnaround    ┃ Waiting       ┃
+┃ Name          ┃ Time          ┃ Time          ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ A             ┃ 1             ┃ 0             ┃
+┃ B             ┃ 14            ┃ 10            ┃
+┃ C             ┃ 4             ┃ 2             ┃
+┃ D             ┃ 5             ┃ 4             ┃
+┃ E             ┃ 27            ┃ 15            ┃
+┃ F             ┃ 20            ┃ 15            ┃
+┃ G             ┃ 12            ┃ 9             ┃
+┃ H             ┃ 14            ┃ 12            ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ Average       ┃ 97/8=12.125   ┃ 67/8=8.375    ┃
+┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Shortest Time Remaining First Simulation      ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+  0 A   Process Terminates.
+  1 B   Process Preempted - 3ms left.
+  2 D   Process Terminates.
+  3 C   Process Terminates.
+  5 H   Process Terminates.
+  7 B   Process Terminates.
+  10 G  Process Terminates.
+  13 F  Process Terminates.
+  18 E  Process Terminates.
+  30    Completed
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Process       ┃ Turnaround    ┃ Waiting       ┃
+┃ Name          ┃ Time          ┃ Time          ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ A             ┃ 1             ┃ 0             ┃
+┃ B             ┃ 10            ┃ 6             ┃
+┃ C             ┃ 3             ┃ 1             ┃
+┃ D             ┃ 1             ┃ 0             ┃
+┃ E             ┃ 27            ┃ 15            ┃
+┃ F             ┃ 14            ┃ 9             ┃
+┃ G             ┃ 8             ┃ 5             ┃
+┃ H             ┃ 2             ┃ 0             ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ Average       ┃ 66/8=8.250    ┃ 36/8=4.500    ┃
+┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
+┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ Shortest Job First Simulation                 ┃
+┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
+  0 A   Process Terminates.
+  1 B   Process Terminates.
+  5 D   Process Terminates.
+  6 C   Process Terminates.
+  8 H   Process Terminates.
+  10 G  Process Terminates.
+  13 F  Process Terminates.
+  18 E  Process Terminates.
+  30    Completed
+┏━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┓
+┃ Process       ┃ Turnaround    ┃ Waiting       ┃
+┃ Name          ┃ Time          ┃ Time          ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ A             ┃ 1             ┃ 0             ┃
+┃ B             ┃ 5             ┃ 1             ┃
+┃ C             ┃ 6             ┃ 4             ┃
+┃ D             ┃ 4             ┃ 3             ┃
+┃ E             ┃ 27            ┃ 15            ┃
+┃ F             ┃ 14            ┃ 9             ┃
+┃ G             ┃ 8             ┃ 5             ┃
+┃ H             ┃ 5             ┃ 3             ┃
+┣━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━┫
+┃ Average       ┃ 70/8=8.750    ┃ 40/8=5.000    ┃
+┗━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┛
+
+
+The best algorithm, if we use the stats from the program, would have to be shortest remaining time first has to be the best.  It has clearly better over all stats than the other two.  Better averages and better total times makes this the best algorithm, based of the output.  Compared to both round robin, and shortest job first the time each job waits is lower.  It has one preemption compared to the 4 in round robin.  It improves shortest time first, with only a slight improvement. Given our perfect knowledge of the brust times, we can say for sure that shortest remaining time first will always out perform the other two, as well as taking 0 time to context switch, which gives us a large over head where a real CPU would not. 
